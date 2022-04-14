@@ -5,7 +5,8 @@ public class SceneMgr1 implements Update {
 	protected enum eScene {
 		eScene_Open,
 		eScene_Book,
-		eScene_IT
+		eScene_IT,
+		eScene_Other
 	};
 	
 	eScene Scene_type = eScene.eScene_Open;
@@ -22,6 +23,10 @@ public void IT_Update() {
 	eScene Scene_type = eScene.eScene_IT;
 	System.out.println("在庫管理システム　IT資産データベース");
 }
+public void Other_Update() {
+	eScene Scene_type = eScene.eScene_Other;
+	System.out.println("在庫管理システム　その他データベース");
+}
 
 public void Open_Draw() {
 	
@@ -32,6 +37,10 @@ public void Book_Draw() {
 }
 
 public void IT_Draw() {
+	
+}
+
+public void Other_Draw() {
 	
 }
 

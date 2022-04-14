@@ -18,6 +18,7 @@ public class data extends JFrame{
 	public static void main(String[] args) {
 		
 		eScene Scene_type = eScene.eScene_Open;
+		System.out.println("在庫管理システム　トップ画面");
 		
 		data f = new data();
 		//data fのインスタンス作成
@@ -70,12 +71,15 @@ public class data extends JFrame{
         	 
              if(thing.equals("本")) { //Spring型のデータは「==」では正しい結果にならない
             	 System.out.println("\n本");
+            	 Scene_type = eScene.eScene_Book;
              }
              else if(thing.equals("IT資産")) {
             	 System.out.println("\nIT資産");
+            	 Scene_type = eScene.eScene_IT;
              }
              else {
             	 System.out.println("\nその他");
+            	 Scene_type = eScene.eScene_Other;
              }
 	}
 	
