@@ -21,6 +21,7 @@ public class data extends JFrame{
 		Update_IT,
 		Update_Other
 	};
+	//Update 列挙型
 	
 	protected enum Draw {
 		Draw_Open,
@@ -28,12 +29,19 @@ public class data extends JFrame{
 		Draw_IT,
 		Draw_Other
 	};
+	//Draw 列挙型
 	
 	public static void main(String[] args) {
 		
 		Update Update_type = Update.Update_Open;
+		//Updateの初期設定
 		
 		eScene Scene_type = eScene.eScene_Open;
+		//eSceneの初期設定
+		
+		Draw Draw_type = Draw.Draw_Open;
+		//Drawの初期設定
+		
 		System.out.println("在庫管理システム　トップ画面");
 		
 		data f = new data();
@@ -85,19 +93,29 @@ public class data extends JFrame{
          
         	 System.out.println(thing + "のデータベースに移ります");
         	 
-             if(thing.equals("本")) { //Spring型のデータは「==」では正しい結果にならない
+             if(thing.equals("本")) { 
+            	 //Spring型のデータは「==」では正しい結果にならない
+            	 
             	 System.out.println("\n本");
+            	
             	 Scene_type = eScene.eScene_Book;
+            	 //Sceneの更新　ここの「eScene_Book」もエラーを出す
+            	 
             	 Update_type = Update.Update_Book;
+            	 //Updateの更新
              }
              else if(thing.equals("IT資産")) {
             	 System.out.println("\nIT資産");
+            	 
             	 Scene_type = eScene.eScene_IT;
+            	 
             	 Update_type = Update.Update_IT;
              }
              else {
             	 System.out.println("\nその他");
+            	
             	 Scene_type = eScene.eScene_Other;
+            	 
             	 Update_type = Update.Update_Other;
              }
 	}
