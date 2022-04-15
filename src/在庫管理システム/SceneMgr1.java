@@ -1,49 +1,46 @@
 package 在庫管理システム;
 
-public class SceneMgr1 implements Update {
-	
+import javax.swing.JFrame;
+
+import 在庫管理システム.data.Update;
+import 在庫管理システム.data.Draw;
+
+public class SceneMgr1 extends JFrame {
+//継承
+		
 	protected enum eScene {
+		
 		eScene_Open,
-		eScene_Book,
+		eScece_Book,
 		eScene_IT,
 		eScene_Other
+		
 	};
 	
-	eScene Scene_type = eScene.eScene_Open;
+	if(Update_type = "Update_Open") {
+		Draw Draw_type = Draw.Draw_Open;
+		eScene Scene_type = eScene.eScene_Open;
+		System.out.println("在庫管理システム　トップ画面");
+	}
 	
-public void Open_Update() {
-	eScene Scene_type = eScene.eScene_Open;
-	System.out.println("在庫管理システム　トップ画面");
-}
-public void Book_Update() {
-	eScene Scene_type = eScene.eScene_Book;
-	System.out.println("在庫管理システム　本データベース");
-}
-public void IT_Update() {
-	eScene Scene_type = eScene.eScene_IT;
-	System.out.println("在庫管理システム　IT資産データベース");
-}
-public void Other_Update() {
-	eScene Scene_type = eScene.eScene_Other;
-	System.out.println("在庫管理システム　その他データベース");
-}
-
-public void Open_Draw() {
+	else if(Update_type = "Update_Book") {
+		Draw Draw_type = Draw.Draw_Book;
+		eScene Scene_type = eScene.eScene_Book;
+		System.out.println("在庫管理システム　本データベース");
+	}
 	
-}
+	else if(Update_type = "Update_IT") {
+		Draw Draw_type = Draw.Draw_IT;
+		eScene Scene_type = eScene.eScene_IT;
+		System.out.println("在庫管理システム　IT資産データベース");
+	}
 
-public void Book_Draw() {
-	
-}
-
-public void IT_Draw() {
-	
-}
-
-public void Other_Draw() {
+	else {
+		Draw Draw_type = Draw.Draw_Other;
+		eScene Scene_type = eScene.eScene_Other;
+		System.out.println("在庫管理システム　その他データベース");
+	}
 	
 }
 
 }
-	
-	

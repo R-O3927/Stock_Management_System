@@ -15,7 +15,23 @@ import 在庫管理システム.SceneMgr1.eScene;
 public class data extends JFrame{
 //継承
 	
+	protected enum Update {
+		Update_Open,
+		Update_Book,
+		Update_IT,
+		Update_Other
+	};
+	
+	protected enum Draw {
+		Draw_Open,
+		Draw_Book,
+		Draw_IT,
+		Draw_Other
+	};
+	
 	public static void main(String[] args) {
+		
+		Update Update_type = Update.Update_Open;
 		
 		eScene Scene_type = eScene.eScene_Open;
 		System.out.println("在庫管理システム　トップ画面");
@@ -72,14 +88,17 @@ public class data extends JFrame{
              if(thing.equals("本")) { //Spring型のデータは「==」では正しい結果にならない
             	 System.out.println("\n本");
             	 Scene_type = eScene.eScene_Book;
+            	 Update_type = Update.Update_Book;
              }
              else if(thing.equals("IT資産")) {
             	 System.out.println("\nIT資産");
             	 Scene_type = eScene.eScene_IT;
+            	 Update_type = Update.Update_IT;
              }
              else {
             	 System.out.println("\nその他");
             	 Scene_type = eScene.eScene_Other;
+            	 Update_type = Update.Update_Other;
              }
 	}
 	
