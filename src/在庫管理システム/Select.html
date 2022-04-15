@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>在庫管理システム</title>
+</head>
+<body>
+
+<p>在庫管理システム　トップ画面です。</p>
+
+<label for="data">見たいジャンルを選択して下さい</label>
+<select id="data">
+<option value="本">本</option>
+<option value="IT資産">IT資産</option>
+<option value="その他">その他</option>
+</select>
+
+<div>
+<input type="button" value="Check" id="checkButton">
+</div>
+
+<script>
+function buttonClick(){
+	console.log('選択されているのは'+ dataSelect +'です');
+}
+
+let dataSelect = document.getElementById('data');
+dataSelect.option[2].selected = true;
+
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click',buttonClick);
+</script>
+
+
+</body>
+</html>

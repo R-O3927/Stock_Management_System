@@ -33,6 +33,8 @@ public class data extends JFrame{
 	
 	public static void main(String[] args) {
 		
+		int count = 0;
+		
 		Update Update_type = Update.Update_Open;
 		//Updateの初期設定
 		
@@ -65,9 +67,17 @@ public class data extends JFrame{
 		l.setForeground(Color.BLUE);
 		//文字の色設定	
 		
+		JLabel l2 = new JLabel("Welcome our System!!");
+		
+		l2.setFont(new Font("Arial",Font.PLAIN,30));
+		
+		l2.setForeground(Color.BLUE);
+		
 		p.add(l);
 		//ラベルをパネルに配置
 	    
+		p.add(l2);
+		
 		c.add(p,BorderLayout.CENTER);
 		//パネルをウィンドウの表示領域に配置
 		
@@ -77,11 +87,11 @@ public class data extends JFrame{
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //ウィンドウの「閉じる」ボタンを押した時の動作
         
-        f.setSize(800,800);
+        f.setSize(500,800);
         //ウィンドウのサイズを設定
         
 		Scanner scanner = new Scanner(System.in);
-         // TODO 自動生成されたメソッド・スタブ
+         //インスタンス作成
          
 		System.out.println("見たいジャンルを入力して下さい");
          
@@ -96,15 +106,20 @@ public class data extends JFrame{
              if(thing.equals("本")) { 
             	 //Spring型のデータは「==」では正しい結果にならない
             	 
+            	 count = 1;
+            	 
             	 System.out.println("\n本");
             	
             	 Scene_type = eScene.eScene_Book;
-            	 //Sceneの更新　ここの「eScene_Book」もエラーを出す
+            	 //Sceneの更新
             	 
             	 Update_type = Update.Update_Book;
             	 //Updateの更新
              }
              else if(thing.equals("IT資産")) {
+            	 
+            	 count = 2;
+            	 
             	 System.out.println("\nIT資産");
             	 
             	 Scene_type = eScene.eScene_IT;
@@ -112,6 +127,9 @@ public class data extends JFrame{
             	 Update_type = Update.Update_IT;
              }
              else {
+            	 
+            	 count = 3;
+            	 
             	 System.out.println("\nその他");
             	
             	 Scene_type = eScene.eScene_Other;
@@ -121,5 +139,3 @@ public class data extends JFrame{
 	}
 	
 }
-
-
